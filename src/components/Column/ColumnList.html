@@ -1,0 +1,12 @@
+<div class="column-list">
+	<div 
+		class="cascade-wrap"
+		ng-repeat="column in mergeOptionColumns"
+	>
+		<column 
+			options="column.options"
+			on-active="onPathActive"
+			on-select="onSelect"
+		></column>
+	</div>
+</div>

@@ -1,0 +1,96 @@
+.zusus-select {
+	position: relative;
+	background: #FFFFFF;
+	border-radius: 2px;
+	border: 1px solid #D8DAE5;
+
+	&:hover {
+		box-shadow: 0px 2px 4px 0px rgba(11, 102, 229, 0.4);
+		border: 1px solid #0B66E5;
+	}
+}
+
+.zusus-select-selector {
+	padding: 5px 28px 5px 3px;
+}
+
+.zusus-select-selector-overflow {
+	display: flex;
+	position: relative;
+	display: flex;
+	flex: auto;
+	flex-wrap: wrap;
+	max-width: 100%;
+	cursor: text;
+}
+
+.zusus-select-item {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	font-weight: 400;
+	padding: 2px 4px;
+	margin-right: 4px;
+	color: #252833;
+	line-height: 16px;
+	background: #EBECF2;
+	border-radius: 2px;
+
+	&-text {
+		margin-right: 4px;
+	}
+
+	&-close {
+		cursor: pointer;
+	}
+}
+
+.cascade-option-panel {
+	display: flex;
+	width: fit-content;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 10px 0px rgba(18, 19, 26, 0.1);
+	border-radius: 2px;
+}
+
+.column-list {
+	display flex;
+}
+
+.cascade-wrap + .cascade-wrap {
+	border-left: 1px solid #EBECF2;
+}
+
+.cascade-list {
+	overflow: auto;
+	padding: 8px 0;
+	width: 128px;
+	max-height: 208px;
+}
+
+.cascade-item {
+	display: flex;
+	padding: 6px 8px;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	cursor pointer;
+	
+	&:hover {
+		background: #F5F6FA;
+	}
+
+	&-active {
+		color: #0B66E5;
+		background: #E4F0FF;
+	}
+
+	&-text {
+		margin-left: 8px;
+	}
+
+	&-icon {
+		margin-left: 4px;
+	}
+}

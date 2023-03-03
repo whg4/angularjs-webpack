@@ -1,0 +1,100 @@
+.rc-checkbox {
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.rc-checkbox:hover .rc-checkbox-inner{
+  border-color: #0B66E5;
+}
+
+.rc-checkbox-inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  border-color: #d9d9d9;
+  background-color: #ffffff;
+  transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.rc-checkbox-inner:after {
+  transform: rotate(45deg);
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  display: table;
+  width: 5px;
+  height: 8px;
+  border: 2px solid #ffffff;
+  border-top: 0;
+  border-left: 0;
+  content: ' ';
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation-duration: 0.3s;
+  animation-name: amCheckboxOut;
+}
+
+/* Checked state */
+.rc-checkbox-checked:hover .rc-checkbox-inner {
+  border-color: #0B66E5;
+}
+
+.rc-checkbox-checked .rc-checkbox-inner,
+.rc-checkbox-indeterminate .rc-checkbox-inner {
+  border-color: #0B66E5;
+  background-color: #0B66E5;
+}
+
+.rc-checkbox-checked .rc-checkbox-inner:after {
+  transform: rotate(45deg);
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  display: table;
+  width: 5px;
+  height: 8px;
+  border: 2px solid #ffffff;
+  border-top: 0;
+  border-left: 0;
+  content: ' ';
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation-duration: 0.3s;
+  animation-name: amCheckboxOut;
+}
+
+.rc-checkbox-indeterminate .rc-checkbox-inner:after {
+  transform: rotate(0);
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  display: table;
+  width: 8px;
+  height: 2px;
+  border: 2px solid #ffffff;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  content: ' ';
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation-duration: 0.3s;
+  animation-name: amCheckboxOut;
+}
+
+@keyframes amCheckboxOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

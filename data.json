@@ -1,0 +1,110 @@
+{
+	"errCode": 0,
+	"logId": 2199665248,
+	"msg": "Ok",
+	"data": {
+		"chart_num": 2,
+		"modules": [
+			{
+				"name": "PageLinkTracking",
+				"title": "",
+				"query": {
+					"from": {
+						"type": "time",
+						"format": "yyyy-mm-dd",
+						"startView": "month",
+						"default": "2023-03-02",
+						"label": "\u5f00\u59cb\u65e5\u671f"
+					},
+					"to": {
+						"type": "time",
+						"format": "yyyy-mm-dd",
+						"startView": "month",
+						"default": "2023-03-02",
+						"label": "\u7ed3\u675f\u65e5\u671f"
+					},
+					"multiFilter": {
+						"type": "multi-filter",
+						"info": {
+							"filters": [
+								{
+									"value": "book_id",
+									"name": "\u4e66\u7c4did",
+									"condition": [
+										{
+											"name": "=",
+											"value": "eq"
+										}
+									],
+									"type": "input"
+								},
+								{
+									"value": "campaign",
+									"name": "campaignname",
+									"condition": [
+										{
+											"name": "=",
+											"value": "eq"
+										}
+									],
+									"type": "input"
+								}
+							],
+							"title": "\u7b5b\u9009\u6761\u4ef6"
+						}
+					}
+				},
+				"component": [
+					{
+						"link_track_data": {
+							"type": "new-table",
+							"config": {
+								"pageSize": 25,
+								"pageSizeOptions": [
+									25,
+									50,
+									100
+								],
+								"export": true
+							}
+						},
+						"link_detail_data": {
+							"type": "new-table",
+							"config": {
+								"pageSize": 25,
+								"pageSizeOptions": [
+									25,
+									50,
+									100
+								],
+								"export": true
+							},
+							"tabs": [
+								{
+									"name": "\u5e7f\u544a\u6570\u636e",
+									"value": "ad"
+								},
+								{
+									"name": "\u7528\u6237\u6570\u636e",
+									"value": "user"
+								},
+								{
+									"name": "\u9605\u8bfb\u6570\u636e",
+									"value": "read"
+								},
+								{
+									"name": "\u5145\u503c\u6570\u636e",
+									"value": "recharge"
+								},
+								{
+									"name": "\u6d88\u8d39\u6570\u636e",
+									"value": "pay"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+}

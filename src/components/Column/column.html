@@ -1,0 +1,14 @@
+<div class="cascade-list">
+	<div 
+		class="cascade-item"
+		ng-class="{ 'cascade-item-active': item.value === activeValue }"
+		ng-repeat="item in optionList"
+		ng-click="onCascadeItemClick(item)"
+	>
+		<checkbox
+			on-click="onCheckboxClick(item)"
+		></checkbox>
+		<div class="cascade-item-text">{{ item.label }}</div>
+		<div class="cascade-item-icon">&gt;</div>
+	</div>
+</div>
