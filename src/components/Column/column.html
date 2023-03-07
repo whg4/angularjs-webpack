@@ -6,9 +6,14 @@
 		ng-click="onCascadeItemClick(item)"
 	>
 		<checkbox
+			checked="checkedSet.has(item.fullPathKey)"
+			indeterminate="halfCheckedSet.has(item.fullPathKey)"
 			on-click="onCheckboxClick(item)"
 		></checkbox>
 		<div class="cascade-item-text">{{ item.label }}</div>
-		<div class="cascade-item-icon">&gt;</div>
+		<div 
+			ng-if="!item.isLeaf"
+			class="cascade-item-icon"
+		>&gt;</div>
 	</div>
 </div>

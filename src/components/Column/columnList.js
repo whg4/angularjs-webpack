@@ -9,6 +9,9 @@ function ColumnList() {
 		restrict: 'E',
 		scope: {
 			mergeOptions: '=',
+			checkedSet: '=',
+			halfCheckedSet: '=',
+			onSelect: '&',
 		},
 		template: ColumnListHtml,
 		link: function (scope, element, attrs) {
@@ -24,7 +27,7 @@ function ColumnList() {
 					const currentOption = currentList.find((item) => item.value === activeCellValue);
 
 					if (currentOption && !currentOption.children) {
-						return;
+						break;
 					}
 
 					const subOptions = currentOption.children;
@@ -33,7 +36,6 @@ function ColumnList() {
 				}
 
 				scope.mergeOptionColumns = mergeOptionColumns;
-				console.log('mergeOptionColumns', mergeOptionColumns);
 			}
 
 			scope.onPathActive = function (path) {
@@ -41,8 +43,8 @@ function ColumnList() {
 				getMergeOptionColumns();
 			}
 
-			scope.onSelect = function (fullPath) {
-				console.log('fullPath', fullPath);
+			scope.onPathSelect = function (fullPath) {
+				scope.onSelect()(fullPath);
 			}
 
 			scope.$watch('mergeOptions', function (newValue) {

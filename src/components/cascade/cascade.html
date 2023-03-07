@@ -1,21 +1,39 @@
 <div class="zusus-select">
-	<div class="zusus-select-selector">
+	<div 
+		class="zusus-select-selector"
+		ng-
+		ng-click="handleCascadeClick()"
+		ng-mouseenter="handleMouseEnter($event)"
+		ng-mouseleave="handleMouseLeave($event)"
+	>
 		<div class="zusus-select-selector-overflow">
-			<div class="zusus-select-item">
-				<span class="zusus-select-item-text">选项1</span>
-				<span class="zusus-select-item-close">x</span>
-			</div>
-			<div class="zusus-select-item">
-				<span class="zusus-select-item-text">选项1</span>
-				<span class="zusus-select-item-close">x</span>
+			<div 
+				class="zusus-select-item"
+				ng-repeat="select in selectedItem track by select.key"
+			>
+				<span class="zusus-select-item-text">{{ select.label }}</span>
+				<span
+					ng-click="onRemove(select.fullPath)" 
+					class="zusus-select-item-close"
+				>x</span>
 			</div>
 		</div>
-		<!-- placeholder -->
+
+		<!-- clear -->
+		<div
+			ng-if="isShowAllClear"
+			ng-click="handleAllClear($event)"
+			class="icon-all-clear"
+		>x</div>
+	</div>
+
+	<div class="cascade-option-panel">
+		<column-list 
+			merge-options="mergeOptions"
+			checked-set="checkedSet"
+			half-checked-set="halfCheckedSet"
+			on-select="onSelect"
+		></column-list>
 	</div>
 </div>
 
-<div class="cascade-option-panel">
-	<column-list 
-		merge-options="mergeOptions"
-	></column-list>
-</div>

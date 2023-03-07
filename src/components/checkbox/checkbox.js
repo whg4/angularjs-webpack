@@ -15,7 +15,10 @@ function Checkbox() {
 		},
 		template: CheckboxHtml,
 		link: function (scope, element, attrs) {
-
+			scope.handleClick = (e) => {
+				e.stopPropagation();
+				scope.onClick();
+			}
 		}
 	}
 }

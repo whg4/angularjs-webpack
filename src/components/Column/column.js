@@ -1,6 +1,5 @@
 import angular from "angular";
 import ColumnHtml from './column.html';
-import { SEARCH_MARK } from '../../config/const';
 
 angular.module('components')
 	.directive('column', Column);
@@ -11,6 +10,8 @@ function Column() {
 		scope: {
 			options: '=',
 			activeValue: '=',
+			checkedSet: '=',
+			halfCheckedSet: '=',
 			onSelect: '&',
 			onActive: '&',
 		},
@@ -20,14 +21,12 @@ function Column() {
 
 			const getOptionList = () => {
 				const optionList = scope.options.map((option) => {
-
-					const fullPath = option[SEARCH_MARK]
-						.map((item) => item.value);
-
 					return {
 						label: option.label,
 						value: option.value,
-						fullPath,
+						isLeaf: option.isLeaf,
+						fullPath: option.fullPath,
+						fullPathKey: option.fullPathKey,
 					}
 				});
 
@@ -41,11 +40,15 @@ function Column() {
 			});
 
 			scope.onCheckboxClick = (item) => {
-
+				scope.onSelect()(item.fullPath);
 			}
 
 			scope.onCascadeItemClick = (item) => {
 				scope.onActive()(item.fullPath);
+
+				if (item.isLeaf) {
+					scope.onSelect()(item.fullPath);
+				}
 			}
 		}
 	}

@@ -24,7 +24,6 @@
   border-radius: 3px;
   border-color: #d9d9d9;
   background-color: #ffffff;
-  transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .rc-checkbox-inner:after {
@@ -39,9 +38,6 @@
   border-top: 0;
   border-left: 0;
   content: ' ';
-  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  animation-duration: 0.3s;
-  animation-name: amCheckboxOut;
 }
 
 /* Checked state */
@@ -67,9 +63,6 @@
   border-top: 0;
   border-left: 0;
   content: ' ';
-  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  animation-duration: 0.3s;
-  animation-name: amCheckboxOut;
 }
 
 .rc-checkbox-indeterminate .rc-checkbox-inner:after {
@@ -85,16 +78,4 @@
   border-right: 0;
   border-bottom: 0;
   content: ' ';
-  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  animation-duration: 0.3s;
-  animation-name: amCheckboxOut;
-}
-
-@keyframes amCheckboxOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }

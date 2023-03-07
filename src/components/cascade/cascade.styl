@@ -3,15 +3,30 @@
 	background: #FFFFFF;
 	border-radius: 2px;
 	border: 1px solid #D8DAE5;
+	width: 240px;
+	min-height: 32px;
 
 	&:hover {
 		box-shadow: 0px 2px 4px 0px rgba(11, 102, 229, 0.4);
 		border: 1px solid #0B66E5;
 	}
+
+	cursor pointer;
+}
+
+.icon-all-clear {
+	position: absolute;
+	top 50%;
+	right 8px;
+	font-size 16px;
+	line-height 1;
+	transform: translateY(-50%);
 }
 
 .zusus-select-selector {
+	position relative;
 	padding: 5px 28px 5px 3px;
+	height 100%;
 }
 
 .zusus-select-selector-overflow {
@@ -30,6 +45,8 @@
 	font-size: 12px;
 	font-weight: 400;
 	padding: 2px 4px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 	margin-right: 4px;
 	color: #252833;
 	line-height: 16px;
@@ -46,6 +63,9 @@
 }
 
 .cascade-option-panel {
+	position absolute;
+	top: calc(100% + 4px);
+	left 0;
 	display: flex;
 	width: fit-content;
 	background: #FFFFFF;
@@ -77,7 +97,7 @@
 	line-height: 20px;
 	cursor pointer;
 	
-	&:hover {
+	&:hover:not(&-active) {
 		background: #F5F6FA;
 	}
 
@@ -91,6 +111,7 @@
 	}
 
 	&-icon {
-		margin-left: 4px;
+		margin-left auto;
+		margin-right: 4px;
 	}
 }
